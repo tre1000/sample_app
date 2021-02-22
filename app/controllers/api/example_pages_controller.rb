@@ -1,6 +1,9 @@
 class Api::ExamplePagesController < ApplicationController
   def hello_action
-    render json: [{ message: "Hello" }, { message: "Hello again" }]
+    @message = "Time for time"
+    @time = Time.now.strftime("%e %b %Y %H:%M:%S%p")
+
+    render "hello.json.jb"
   end
 
   def goodbye_action
